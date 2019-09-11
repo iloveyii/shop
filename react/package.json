@@ -5,7 +5,7 @@
   "scripts": {
     "deploy": "cp css ../server/public/ -Rf && cp img ../server/public/ -Rf && cp -Rf index.html ../server/public/",
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build && cp -Rf .htaccess build/"
   },
   "author": "Ali",
   "license": "ISC",
