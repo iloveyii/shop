@@ -1,0 +1,76 @@
+
+@media only screen and (max-width: 800px) {
+  .price-list {
+    margin: -3px 4px 0px 4px !important;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+  }
+
+  .search-box {
+    padding: 7px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  #standard_div, #ceiling_div {
+    display: none;
+  }
+  #navbar {
+    position: absolute;
+    right: -243px;
+    background-color: #FFFFFF;
+    width: 243px;
+    z-index: 100;
+    flex-direction: column;
+    /* margin-top: 45px !important; */
+    padding-top: 20px !important;
+    overflow: auto;
+  }
+}
+
+#enkelt-right {
+  width: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+  #enkelt-right {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .box {
+    padding: 0;
+  }
+  .content {
+    width: 100%;
+  }
+}
+
+// Gallery - Referenser
+@media only screen and (min-width: $col-1) {
+  .gallery .item {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: $col-2) {
+  .gallery .item {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: $col-3) {
+  .gallery .item {
+    width: 33%;
+  }
+}
+
+@media only screen and (min-width: $col-4) {
+  .gallery .item {
+    width: 20%;
+  }
+}

@@ -1,0 +1,71 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+.search {
+  &--wrapper {
+    display: block;
+    font-family: $dd-font-family;
+    position: relative;
+    border-radius: 12px;
+  }
+
+  &--container {
+    margin: 0;
+    height: $input-height;
+    display: flex;
+    flex-direction: row;
+
+    &--icon {
+      flex: 1;
+      background-color: $color-dd-grey-light-1;
+      color: $color-dd-white-light-1;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+
+      span.title {
+        font-size: 12px;
+        padding-right: 6px;
+      }
+      i {
+        font-size: 20px;
+      }
+    }
+
+    &--box {
+      @include inputBox();
+      @include inputBoxFocusHover();
+      flex: 2;
+      border-radius: 0 !important;
+    }
+    &--button {
+      background: $color-dd-grey-light-1;
+      width: 60px;
+      color: $color-dd-white-light-1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      cursor: pointer;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  .search {
+    &--container {
+      &--icon {
+        display: none;
+      }
+      &--button {
+        width: 40px;
+      }
+    }
+  }
+
+}

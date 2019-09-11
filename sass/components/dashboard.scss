@@ -1,0 +1,145 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+.dashboard {
+  margin-top: 0 !important;
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  background-color: #0b0c22;
+  min-height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+  font-family: $dd-font-family;
+
+  &--container {
+    margin-top: 20px;
+  }
+
+  &--left-bar {
+    width: 120px;
+    min-height: 100%;
+    background-color: #20232f;
+    display: block;
+    float: left;
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+
+    .button {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      height: 120px;
+      cursor: pointer;
+      text-decoration: none;
+      color: #FFFFFF;
+
+      &:hover {
+        background-color: #0b0c22;
+      }
+
+      label {
+        font-size: $default-font-size;
+        margin-top: 7px;
+        cursor: pointer;
+        text-decoration: none;
+        color: #FFFFFF;
+
+        h4 {
+          margin: 0;
+        }
+      }
+
+    }
+
+    &-line {
+      border-bottom: 1px solid #FFFFFF;
+      display: block;
+      margin: 0 25px;
+    }
+
+
+    .active {
+      background-color: #0b0c22;
+    }
+  }
+
+  &--center {
+    padding: 30px;
+    display: block;
+    float: left;
+    width: 100%;
+    background-color: transparent;
+
+    input, select, button {
+      @include inputBox();
+      @include inputBoxFocusHover();
+      height: $input-height;
+      width: 100%;
+    }
+
+    button {
+      min-width: 140px;
+    }
+
+    .button-small {
+      height: auto !important;
+      padding: 4px !important;
+      margin-right: 8px;
+      margin-bottom: 0 !important;
+      width: 0;
+      cursor: pointer;
+    }
+
+    textarea {
+      @include inputBox();
+      @include inputBoxFocusHover();
+      width: 100%;
+    }
+  }
+
+  .list-group {
+    background-color: black;
+    color: #FFFFFF;
+    list-style: none;
+    padding: 40px;
+
+    li {
+      line-height: 3.0;
+      padding: 0 10px;
+      background-color: black;
+      border-radius: 2px;
+
+      &:hover {
+        background-color: $color-dd-blue-light-2;
+      }
+    }
+    li:not(:last-child) {
+      border-bottom: 1px solid $color-dd-grey-light-1;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .dashboard {
+
+    &--left-bar {
+      label {
+        display: none;
+      }
+    }
+  }
+}

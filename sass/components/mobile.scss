@@ -1,0 +1,69 @@
+@import "../abstracts/variables";
+
+.mobile-menu {
+  width: 300px;
+  border: 1px solid #eeeeee;
+  position: fixed;
+  right: -350px;
+  top: 73px;
+  background-color: #FFFFFF;
+}
+
+.mobile-menu.in, .collapse.in {
+  transition: 0.1s !important;
+  right: 50px !important;
+}
+
+.mobile-menu.out, .collapse.out {
+  transition: 0.1s !important;
+  right: -350px !important;
+}
+
+.menu-list {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.menu-list li {
+  list-style: none;
+  padding: 11px 0;
+  text-align: left;
+  overflow: hidden;
+}
+
+.menu-list li i {
+  padding-right: 10px;
+}
+
+.menu-list li a {
+  color: $color-green-light-1;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.menu-list li > a {
+  padding-left: 20px;
+}
+
+.menu-list .panel-body {
+  background-color: $color-grey-light-1 !important;
+  padding-left: 20px !important;
+}
+
+.menu-list .panel-body p {
+  padding: 5px 0px !important;
+  margin: 0!important;
+}
+
+.menu-list .panel-heading {
+  padding: 0 20px !important;
+}
+
+.menu-list-i {
+  line-height: 1.6 !important;
+}
+
+.mobile-menu p {
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 14px !important;
+}

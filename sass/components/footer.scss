@@ -1,0 +1,22 @@
+section#footer {
+  overflow: hidden;
+  margin: 0 !important;
+  background-color: #3d3d3d;
+}
+.row-footer {
+  background-color: #3d3d3d;
+  min-height: 265px;
+  padding: 80px !important;
+}
+
+.row-footer a {
+  color: #7a7a7a !important;
+  letter-spacing: 2px !important;
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 10px;
+}
+
+.row-footer a:hover {
+  color: #73A421 !important;
+  text-decoration: none;
+}

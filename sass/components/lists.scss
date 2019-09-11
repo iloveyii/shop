@@ -1,0 +1,245 @@
+@import "../abstracts/variables";
+
+ol.inline h4 , ol.inline p {
+  display: table-cell;
+}
+
+
+.price-list {
+  margin: -30px 140px 0px 140px !important;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+
+.price-list ul li p {
+  margin: 5px !important;
+}
+
+.price-list ul li p i {
+  margin-right: 5px !important;
+}
+
+.list-group-design {
+  text-align: left;
+  list-style: none;
+  counter-reset: line;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.list-group-design li:before {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  margin-right: 0.5em;
+  background-color: none;
+  border: solid #73a421;
+  border-radius: 50%;
+  color: #000000;
+  text-align: center;
+  line-height: 1.8em;
+  counter-increment: line;
+  content: counter(line);
+  padding-top: 7px;
+}
+
+.list-group-design li {
+  display: block;
+  height: 85px;
+  background-color: none;
+  line-height: 1.8em;
+  padding: 10px 10px;
+}
+
+.list-group-design li a {
+  color: #000;
+  text-decoration: none;
+  font: 18px/1 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+.list-group-design li a:hover {
+  text-decoration: none;
+}
+
+.list-group .list-group-item {
+  padding: 8px 15px !important;
+  text-align: center !important;
+}
+
+.list-group .list-group-item:nth-child(even) {
+  background-color: #fbfbfb;
+}
+
+.list-group .list-group-item:first-child h2 {
+  margin-top: 10px;
+  line-height: 52px;
+}
+
+.list-group .list-group-item:first-child p {
+  font-size: 22px !important;
+  text-align: center !important;
+}
+
+.list-group .list-group-item:first-child h3 {
+  font-size: 30px !important;
+  margin-bottom: 50px !important;
+}
+
+.list-group .list-group-item:last-child {
+  padding: 40px !important;
+  text-align: center !important;
+}
+
+.vertical-list li {
+  list-style: none;
+  padding: 4px;
+}
+
+.vertical-list li i {
+  padding-right: 10px;
+}
+
+#accordion a {
+  text-decoration: none;
+}
+
+.list-group-how-it-works {
+  text-align: left;
+  list-style: none;
+  counter-reset: line;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.list-group-how-it-works li:before {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  margin-right: 0.5em;
+  background-color: none;
+  border: solid #73a421;
+  border-radius: 50%;
+  color: #000000;
+  text-align: center;
+  line-height: 1.8em;
+  counter-increment: line;
+  content: counter(line);
+  padding-top: 7px;
+}
+
+.list-group-how-it-works li {
+  display: block;
+  height: 85px;
+  background-color: none;
+  line-height: 1.8em;
+  padding: 10px 10px;
+}
+
+.list-group-how-it-works li a {
+  color: #000;
+  text-decoration: none;
+  font: 18px/1 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+.list-group-how-it-works li a:hover {
+  text-decoration: none;
+}
+
+.panel-title {
+  color: black !important;
+}
+
+
+.panel-default > .panel-heading {
+  color: #333;
+  background-color: #FFFFFF;
+  border-color: #ddd;
+}
+
+.panel-default h4 a:hover {
+  text-decoration: none;
+  color: #73A421;
+}
+
+.panel-heading {
+  padding: 10px !important;
+}
+.company-accordion h4.panel-title {
+  font-weight: bold !important;
+}
+
+.company-accordion h4.panel-title:hover {
+  color: $color-green-light-2 !important;
+}
+
+
+.panel-title i {
+  font-size: 11px;
+  padding-right: 6px;
+  color: #ccc;
+}
+
+.panel-group {
+  width: 100% !important;
+
+}
+
+.panel .panel-heading a {
+  color: $color-green-light-2;
+}
+
+.price-list-span {
+  display: block;
+  text-align: left;
+}
+.price-list-span i {
+  padding-right: 20px;
+}
+.price-list ul li {
+  padding: 15px 0;
+}
+
+/* Sollceller panels types */
+#standard, #premium, #ceiling {
+  cursor: pointer;
+  font-size: 1.9vw;
+  color: black;
+  line-height: 6vh;
+  height: 100%;
+  display: block;
+  text-align: center;
+  padding-top: 1.90vh;
+}
+
+/* Price list */
+#standard_per_month, #standard_all,
+#premium_per_month, #premium_all,
+#tak_per_month, #tak_all {
+  text-align: center;
+  font-size: 30px;
+  display: block;
+  font-weight: bold;
+}
+#standard_per_month, #premium_per_month, #tak_per_month {
+  margin-bottom: 30px;
+}
+
+#standard_all, #premium_all, #tak_all {
+  margin-top: 20px;
+}
+
+span.small {
+  font-size: 15px !important;
+  margin: 20px 0;
+  display: block;
+}

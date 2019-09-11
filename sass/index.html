@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ali">
+    <meta name="author" content="ali sw">
+    <link rel="shortcut icon" href="images/ali.png">
+
+    <title>Admin - Dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous"/>
+    <!-- Custom styles for this template -->
+    <link href="css/style.css?6464fdsfa5645654" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+          integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous"/>
+</head>
+
+<body>
+
+
+<section class="dashboard">
+    <div class="dashboard--left-bar">
+        <span class="button line u-green-text">
+            <i class="fas fa-blog"></i>
+            <label for=""><h4 class="italic">Blogg</h4></label>
+        </span>
+        <span class="dashboard--left-bar-line"></span>
+
+        <span class="button">
+            <i class="fas fa-home"></i>
+            <label for="">Dashboard</label>
+        </span>
+        <span class="button active">
+            <i class="fas fa-user"></i>
+            <label for="">Profile</label>
+        </span>
+        <span class="button">
+            <i class="fas fa-cog"></i>
+            <label>Settings</label>
+        </span>
+
+        <span class="button">
+            <i class="fas fa-chart-bar"></i>
+            <label>Reports</label>
+        </span>
+
+        <span class="button">
+            <i class="fas fa-sign-out-alt"></i>
+            <label>Sign out</label>
+        </span>
+    </div>
+
+    <div class="dashboard--center">
+        <h1 class="italic">Dashboard</h1>
+
+        <div class="row">
+            <div class="col-1-of-3">
+                <div class="search--wrapper">
+                    <div class="search--container">
+                        <div class="search--container--icon">
+                            <span class="title">Find a user</span>   <i class="fas fa-user"></i></div>
+                        <input type="text" class="search--container--box">
+                        <div class="search--container--button">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-3">
+                <input type="text" placeholder="Type username" />
+
+                <div class="dd-wrapper">
+                    <div class="dd-header dd-header-open" id="select-city">
+                        <div class="dd-header-title" id="dd-header-title">Select an option</div>
+                        <div class="dd-icon"><i class="fas fa-angle-down"></i></div>
+                    </div>
+                    <ul class="dd-list" id="dd-list">
+                        <li class="dd-list-item">Stockholm</li>
+                        <li class="dd-list-item">Göteborg</li>
+                        <li class="dd-list-item">Malmö</li>
+                        <li class="dd-list-item">Linköping</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-2-of-3">
+                <div class="dashboard--container">
+                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+
+                    <button type="submit"> <i class="fas fa-save"></i>  Save </button>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<script src="js/jquery-1.12.4.min.js"></script>
+
+<script>
+    document.getElementById('select-city').addEventListener('click', (e) => {
+        e.preventDefault();
+        var dd = document.getElementById('dd-list');
+        dd.style.display = 'block';
+    });
+
+    document.addEventListener('click', (e) => {
+        var dd = document.getElementById('dd-list');
+
+        if( ! e.target.matches('.dd-list-item')) {
+            return;
+        }
+        e.preventDefault();
+        var ddHeaderTitle = document.getElementById('dd-header-title');
+        ddHeaderTitle.innerHTML = e.target.innerHTML;
+
+        dd.style.display = 'none';
+    })
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,638 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+.container-fluid {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.row {
+  width: 100%;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.header-image {
+  margin: 0px;
+  padding: 0px 0px 0px;
+  background-color: hsl(0, 0%, 24%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 658px;
+  background-position: center center;
+  height: 100%;
+}
+
+.box {
+  padding: 30px 30px 7% 30px;
+  min-height: 586px;
+  text-align: center;
+  opacity: .75;
+}
+
+section#utvalda-projeckt .box {
+  @include clipPathBoth();
+}
+
+section#foretag-rakna .box {
+  @include clipPathBoth();
+}
+
+section#solcellspaket-ingår .box {
+  @include clipPathBoth();
+}
+
+section#disign-solsystem {
+  @include clipPathTop();
+}
+
+.row-supplier, .row-charged-boxes, .row-batteries, .row-om-oss {
+  margin: 0px;
+  padding: 0px 0px 0px;
+  background-color: hsl(0, 0%, 24%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  min-height: 877px;
+}
+
+.supplier-right, .supplier-left {
+  padding: 30px;
+  background-color: #f8f8f8;
+  min-height: 586px;
+  text-align: center;
+}
+
+.row-supplier, .row-charged-boxes, .row-batteries, .row-om-oss {
+  margin: 0px;
+  padding: 0px 0px 0px;
+  background-color: hsl(0, 0%, 24%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  min-height: 586px;
+}
+
+.row-supplier {
+  background-image: url(images/enkelt-och-gront.jpg);
+}
+
+.supplier-right, .supplier-left {
+  padding: 30px;
+  background-color: #f8f8f8;
+  min-height: 586px;
+  text-align: center;
+}
+
+.row-charged-boxes {
+  background-image: url(images/Laddbox-test2.jpg);
+}
+
+.row-batteries {
+  background-image: url(images/prova-1.png);
+}
+
+.row-om-oss {
+  background-image: url(images/SolcellerNyheterSVEASolar2-1.png);
+}
+
+.row-installations {
+  background-image: url(images/100-collage-black-and-white.jpg);
+  margin: 0px;
+  padding: 0px 0px 0px;
+  background-color: hsl(0, 0%, 24%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  min-height: 960px;
+}
+
+.heading-enkelt {
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  display: block;
+  font-family: "Open Sans", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  height: auto;
+  letter-spacing: 0.79975px;
+  line-height: 35px;
+  text-align: center;
+  text-rendering: optimizelegibility;
+  text-size-adjust: 100%;
+  width: 250px;
+  border-bottom: 3px solid green;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+.content {
+  padding: 0px 20px;
+  width: 75%;
+  align-content: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.search-box {
+  color: #FFF;
+  padding: 50px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.search-address {
+  padding: 25px 5px !important;
+  text-align: center !important;
+}
+
+.battery-box {
+  color: #FFF;
+  padding: 50px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.underline {
+  border-bottom: 2px solid #75a522;
+  text-align: center;
+  line-height: 45px;
+  margin-bottom: 35px;
+  padding-bottom: 10px;
+}
+
+.underline.gray {
+  border-bottom: 3px solid #f2f2f2 !important;
+}
+
+#about .content {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#laddbox .content {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+.green-el-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.green-el-container img {
+  width: 20%;
+  height: auto;
+}
+
+.supplier p {
+  text-align: center;
+}
+
+.collapsed i {
+  color: #7a7a7a;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+p {
+  width: 100%;
+  text-align: left;
+}
+
+.show-more {
+  display: none;
+}
+
+h3 {
+  text-align: left;
+}
+
+.offices {
+  margin-bottom: 40px;
+}
+
+.gallery {
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.gallery .item {
+  max-width: 200px;
+  min-height: 150px;
+  max-height: 150px;
+  min-width: 90px;
+}
+
+.gallery div {
+  margin-bottom: 20px;
+  overflow: hidden;
+  text-align: center;
+  display: inline-block;
+}
+
+.gallery div img {
+  width: 100%;
+  -webkit-transition: width 2s; /* Safari prior 6.1 */
+  transition: width 2s;
+  z-index: 20;
+  transition-timing-function: ease;
+
+  max-width: 200px;
+  min-height: 150px;
+  max-height: 150px;
+  min-width: 90px;
+  filter: grayscale(100%);
+  margin: 5px;
+}
+
+.gallery div:hover {
+  transition: filter .5s ease-in-out;
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  transform: scale(3);
+  transition: transform .5s;
+  z-index: 99;
+  position: relative;
+}
+
+.offices i.fa-phone-alt {
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+.offices .icons {
+  padding-bottom: 1px;
+  margin-bottom: 1px;
+}
+
+.offices .address {
+  font-weight: bold;
+}
+
+.offices p a {
+  color: $color-green-light-1;
+}
+
+.thumbnail-description, .thumbnail-link {
+  padding: 10px;
+}
+
+.thumbnail-description {
+  text-align: justify;
+}
+
+.thumbnail {
+  padding: 0 !important;
+}
+
+.thumbnail-link {
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  color: $color-green-light-1;
+  text-align: left;
+  display: block;
+}
+
+.thumbnail-link:hover {
+  text-decoration: none;
+  color: $color-green-light-2;
+}
+
+.pagination {
+  margin-top: 40px;
+}
+
+.pagination li span {
+  float: left;
+  margin: 0 .35em;
+  width: 32px;
+  height: 32px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 32px;
+  text-decoration: none;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, .85);
+  color: #bababa;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 transparent, 0 0.1em 0.45em 0 rgba(0, 0, 0, .25);
+  cursor: pointer;
+}
+
+.pagination li span:hover {
+  color: $color-primary;
+}
+
+#news {
+  @include clearfix();
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#close-form:hover {
+  color: $color-green-light-2;
+}
+
+.function {
+  font-weight: bold;
+  font-size: 18px;
+  color: black;
+}
+
+#solceller-questions
+.panel-heading {
+  box-shadow: 0 0.125em 0.275em 0 rgba(0, 0, 0, .125);
+}
+
+.foretag-projekt p {
+  margin: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.leasingmodell li p {
+  margin-bottom: 1px !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.btn-outlined-green {
+  color: $color-green-light-1;
+  background-color: #fff;
+  border-color: $color-green-light-2;
+  border-width: 3px;
+  padding: 8px 12px !important;
+}
+
+.btn-outlined-black {
+  color: #000000;
+  background-color: #fff;
+  border-color: $color-green-light-2;
+  border-width: 3px;
+  padding: 8px 12px !important;
+}
+
+.btn-outlined-green:hover {
+  border-color: #577620;
+  color: $color-green-light-1;
+}
+
+blockquote {
+  font-weight: bold;
+  font-size: 22.5px;
+}
+
+.link {
+  color: $color-green-light-1;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: $color-green-light-3;
+}
+
+.employees p {
+  margin-bottom: 0 !important;
+}
+
+hr.green45 {
+  width: 45%;
+  display: block;
+  height: 0;
+  margin: 1.313em 0;
+  border-top: 2px solid hsl(82, 66%, 39%);
+}
+
+hr.green30center {
+  width: 30%;
+  display: block;
+  height: 0;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 2px solid hsl(82, 66%, 39%);
+}
+
+hr.green100 {
+  width: 100%;
+  display: block;
+  height: 0;
+  border-top: 2px solid hsl(82, 66%, 39%);
+}
+
+hr.grey100 {
+  width: 100%;
+  display: block;
+  height: 0;
+  border-top: 2px solid #f2f2f2;
+}
+
+.huvud-lever img {
+  filter: grayscale(100%);
+}
+
+.huvud-lever img:hover {
+  filter: grayscale(0%);
+}
+
+.circle {
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+}
+
+.circle.smaller {
+  height: 35px;
+  width: 35px;
+  line-height: 40px;
+}
+
+.circle.big {
+  height: 65px;
+  width: 65px;
+  line-height: 33px;
+}
+
+.circle.green {
+  background-color: green;
+}
+
+.circle.light-green {
+  background-color: $color-green-light-1;
+}
+
+.circle.light-grey {
+  background-color: #eeeeee;
+}
+
+.left.carousel-control {
+  padding-top: 15%;
+  width: 5%;
+  margin-left: -40px;
+}
+
+.right.carousel-control {
+  padding-top: 15%;
+  width: 5%;
+  margin-right: -40px;
+}
+
+.comma:before {
+  bottom: 47px !important;
+  box-sizing: border-box !important;
+  color: #bbb !important;
+  content: '\201C' !important;
+  display: block !important;
+  height: 96px !important;
+  left: 56px !important;
+  position: absolute !important;
+  right: 515.391px !important;
+  text-size-adjust: 100% !important;
+  top: 20px !important;
+  width: 24.6094px !important;
+  column-rule-color: #bbb !important;
+  perspective-origin: 12.2969px 48px !important;
+  transform-origin: 12.2969px 48px !important;
+  border: 0 #bbb !important;
+  font: normal normal normal normal 60px/96px Georgia, serif !important;
+  margin: -25px 0 0 -40px !important;
+  outline: #bbb 0 !important;
+}
+
+.comma {
+  padding-left: 8px;
+}
+
+.review {
+  color: #777;
+  font-size: 14px;
+  padding-left: 10px;
+  height: 150px;
+}
+
+.stars {
+  color: rgb(231, 113, 27);
+}
+
+.reviews {
+  overflow: auto;
+}
+
+.review-body {
+  height: 150px;
+  overflow: auto;
+}
+
+.review-footer {
+  margin-top: 30px;
+  text-align: left;
+  padding-left: 30px;
+}
+
+.review-footer .google {
+  width: 5px;
+  position: absolute;
+  right: 63px;
+  bottom: 53px;
+}
+
+.user {
+  text-decoration: none;
+  color: #427fed !important;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.carousel-control.left, .carousel-control.right {
+  background-image: none !important;
+}
+
+reviews::-webkit-scrollbar {
+  width: 3px;
+}
+
+reviews::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+reviews::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.weller {
+  border: 1px solid #ededed !important;
+  background-color: #fafafa !important;
+  padding: 30px;
+  border-radius: 3px;
+}
+
+.slider, #myCarousel {
+  height: 190px !important;
+}
+
+.styrelse-name {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  line-height: 27.2px;
+
+}
+
+.styrelse-contact {
+  border: none;
+  font-size: 16px;
+}
+
+.styrelse-designation, .styrelse-name {
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.legal {
+  border: 2px solid $color-grey-light-1;
+  padding: 60px;
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,.135);
+  border-radius: 4px;
+}

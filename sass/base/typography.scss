@@ -1,0 +1,128 @@
+@import "../abstracts/mixins";
+
+body {
+  font-family: "Open Sans", sans-serif !important;
+}
+
+p.gray {
+  color: rgb(89, 89, 89) !important;
+  font-size: 12px;
+}
+
+strong {
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  display: inline;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  line-height: 23.8px;
+  width: auto;
+}
+
+p {
+  font-size: 19px;
+  font-family: "Open Sans", "Sans serif";
+  font-weight: 300;
+  display: block;
+  box-sizing: border-box;
+  font-style: normal;
+  color: #7a6860;
+  padding-bottom: 12px;
+
+  height: auto;
+  line-height: 23.8px;
+}
+
+.solceller-h2 {
+  font-size: 32px;
+  font-family: "Open Sans", sans-serif;
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+  font-style: normal;
+  color: rgb(0, 0, 0);
+  font-weight: 300;
+  height: auto;
+  letter-spacing: 0.79975px;
+  line-height: 35.189px;
+  text-rendering: optimizelegibility;
+  text-size-adjust: 100%;
+  width: 150px;
+  border-bottom: 3px solid green;
+  margin: 0 auto;
+}
+
+h1 {
+  color: hsl(0, 0%, 100%);
+  font-size: 40px;
+  font-weight: 300;
+  display: block;
+  letter-spacing: 1.25px;
+  line-height: 1.1;
+  width: 100%;
+  font-family: "Open Sans", "Sans serif";
+}
+
+h1.italic, h2.italic {
+  font-style: italic;
+}
+
+h2 {
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  display: block;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 35px;
+  font-size: 32px;
+  font-family: "Open Sans", "Sans serif";
+  letter-spacing: 2px;
+  text-align: left;
+
+  @include clearfix();
+}
+
+h3 {
+  box-sizing: border-box;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 300;
+  width: auto;
+  letter-spacing: 0.525px;
+
+  color: #cc6956;
+  display: block;
+  font-family: "Open Sans", "Sans serif";
+  line-height: 23.1px;
+  margin-block-end: 10.5px;
+  margin-block-start: 36.75px;
+}
+
+h3.italic, h2.italic {
+  font-style: italic;
+}
+
+h4 {
+  text-align: left;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.525px;
+  line-height: 26px;
+  font-family: "Open Sans", "Sans serif";
+  font-style: italic;
+}
+
+p.medium {
+  font-size: 17px;
+  line-height: 29.4px;
+}
+
+p.large {
+  font-size: 22px;
+  line-height: 29.4px;
+}

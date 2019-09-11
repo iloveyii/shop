@@ -1,0 +1,193 @@
+@import "../abstracts/mixins";
+
+#solceller .header-image {
+  background-image: url(images/roof2-black-panels-1.jpg);
+}
+
+#solceller .header-image {
+  background-image: url(images/roof2-black-panels-1.jpg);
+}
+
+#about .header-image {
+  background-image: url(https://themes.ishyoboy.com/kopy/wp/wp-content/uploads/2015/04/photo-1425136738262-212551713a58.jpg);
+}
+
+#laddbox .header-image {
+  background-image: url(images/Laddbox-test2.png);
+  height: 90vh;
+}
+
+#vara-laddbox .header-image {
+  background-image: url(images/iStock-926261132.jpg);
+  clip-path: polygon(0 0, 50% 8%, 100% 0, 100% 90%, 50% 100%, 0 90%);
+}
+
+#solcellspaket .header-image {
+  background-image: url(images/solar-modules-924333-min.jpg);
+  height: 90vh;
+  @include clipPathBottom();
+
+}
+
+#batterier .header-image {
+  background-image: url(images/sonnenbatteri-eco-high_q-compressor.jpg);
+  height: 90vh;
+}
+
+#batterier-egen .header-image {
+  background-image: url(images/concrete-texture.jpg);
+  clip-path: polygon(0 0, 50% 8%, 100% 0, 100% 90%, 50% 100%, 0 90%);
+}
+
+#foretag .header-image {
+  background-image: url(images/commercial_main_image-min-min.jpeg);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+}
+
+#lantbruk .header-image {
+  background-image: url(images/FarmSolarNew.jpg);
+  @include clipPathBottom();
+}
+
+#lantbruk-3-steg .box {
+  background-image: url(images/Solar-Panel-BG-Light.jpg);
+  @include clipPathBoth();
+  background-size: 100% 100%;
+  min-height: auto;
+}
+
+#solenergi .box {
+  background-image: url(images/concrete-texture.jpg);
+  @include clipPathTop();
+  background-size: 100% 100%;
+  min-height: auto;
+}
+
+#solplaner .box {
+  background-image: url(images/Solar-Worker-BG-2.jpg);
+  @include clipPathBottom();
+  background-size: 100% 100%;
+  min-height: auto;
+}
+
+#batterier2 .box {
+  background-size: 100% 100%;
+  min-height: auto;
+}
+
+#detail-item1 {
+  background-image: url(../images/kopy/item-1.jpg);
+}
+#detail-item2 {
+  background-image: url(../images/kopy/item-2.jpg);
+}
+#detail-item3 {
+  background-image: url(../images/kopy/item-3.jpg);
+}
+
+#detail-item4 {
+  background-image: url(../images/kopy/item-4.jpg);
+}
+
+
+#about .header-image {
+  background-image: url(images/Roof-2_00000-1.jpg);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+  /* min-height: 90vh; */
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#villa .header-image {
+  background-image: url(images/roof2-black-panels-1.jpg);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+  height: 90vh;
+}
+
+#laddbox .header-image {
+  background-image: url(images/Laddbox-test2.png);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+  height: 90vh;
+}
+
+#vara-laddbox .header-image {
+  background-image: url(images/iStock-926261132.jpg);
+  clip-path: polygon(0 0, 50% 8%, 100% 0, 100% 90%, 50% 100%, 0 90%);
+}
+
+#batterier .header-image {
+  background-image: url(images/sonnenbatteri-eco-high_q-compressor.jpg);
+  height: 80vh;
+  @include clipPathBottom();
+}
+
+#kontakta-oss .box {
+  background-image: url(images/Swedish-Flag-BG.png);
+  @include clipPathBottom();
+  background-size: 100% 100%;
+  min-height: auto;
+}
+
+#batterier-egen .header-image {
+  background-image: url(images/concrete-texture.jpg);
+  clip-path: polygon(0 0, 50% 8%, 100% 0, 100% 90%, 50% 100%, 0 90%);
+}
+
+#fri-offert .header-image {
+  background-image: url(images/concrete-texture.jpg);
+  clip-path: polygon(0 0, 50% 8%, 100% 0, 100% 100%, 50% 100%, 0 100%);
+}
+
+#villa-bygga-hus .box {
+  @include clipPathTop();
+  background-size: 100% 100%;
+  min-height: auto;
+}
+
+
+.row-charged-boxes {
+  background-image: url(images/Laddbox-test2.jpg);
+}
+
+.row-batteries {
+  background-image: url(images/prova-1.png);
+}
+
+.row-om-oss {
+  background-image: url(images/SolcellerNyheterSVEASolar2-1.png);
+}
+
+.row-installations {
+  background-image: url(images/100-collage-black-and-white.jpg);
+  margin: 0px;
+  padding: 0px 0px 0px;
+  background-color: hsl(0, 0%, 24%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  /* min-height: 960px; */
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+.row-supplier {
+  background-image: url(images/enkelt-och-gront.jpg);
+}
+
+.supplier-left {
+  background-image: url(images/enkelt-och-gront.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+
+#solceller-for-villa, #solceller-for-foretag, #solceller-for-lantbruk {
+  filter: grayscale(100%);
+}
+
+#solceller-for-villa:hover, #solceller-for-foretag:hover, #solceller-for-lantbruk:hover  {
+  filter: grayscale(1%);
+}

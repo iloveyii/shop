@@ -1,0 +1,38 @@
+
+ul#social {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+}
+
+ul#social li {
+  background-color: #787878;
+  flex: 1;
+  margin: 5px;
+  font-size: 20px;
+  padding: 0;
+}
+
+ul#social li a {
+  color: white !important;
+  font-size: 20px !important;
+}
+
+ul#social li#facebook:hover {
+  background-color: #3b5998;
+}
+ul#social li#twitter:hover {
+  background-color: #38A1F3;
+}
+ul#social li#linkedin:hover {
+  background-color: #0077B5;
+}
+ul#social li#instagram:hover {
+  background-color: #bc2a36;
+}
+ul#social li#google-plus:hover {
+  background-color: #CC3333;
+}

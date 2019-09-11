@@ -1,0 +1,59 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+.dd {
+  &-wrapper {
+    display: block;
+    font-family: $dd-font-family;
+    position: relative;
+  }
+  &-header {
+    @include inputBox();
+    cursor: pointer;
+    margin: 0;
+    height: $input-height;
+    @include inputBoxFocusHover();
+
+    &-open {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &-title {
+      float: left;
+    }
+
+    .dd-icon {
+      float: right;
+    }
+  }
+
+  &-list {
+    // border: 1px solid $color-green-light-3;
+    background-color: black;
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+
+    &-item {
+      color: $color-dd-white-light-1;
+      font-family: inherit;
+      padding: 12px;
+
+      &:hover {
+        background-color: $color-dd-grey-light-1;
+        cursor: pointer;
+      }
+    }
+  }
+}
