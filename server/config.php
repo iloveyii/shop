@@ -1,4 +1,5 @@
 <?php
+
 return [
     'id' => 'micro-service-shop-app',
     // the basePath of the application will be the `micro-app` directory
@@ -11,7 +12,7 @@ return [
     ],
 
     'components' => [
-        'request' => [
+        'request' => php_sapi_name() == "cli" ? [] : [
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
             ]
