@@ -439,7 +439,9 @@ p.large {
   .button-small {
     min-width: 100px !important;
     padding: 2px !important;
-    margin-right: 3px; } }
+    margin-right: 3px; }
+  .list-group {
+    padding: 5px !important; } }
 
 .dd-wrapper {
   display: block;
@@ -534,7 +536,7 @@ body {
 @media only screen and (max-width: 600px) {
   body {
     background-color: lightblue; }
-  .row .col-1-of-4, .row .col-1-of-3, .row .col-3-of-4, .row .col-2-of-3 {
+  .row .col-1-of-4, .row .col-1-of-3, .row .col-3-of-4, .row .col-2-of-3, .row .col-1-of-2 {
     width: 100%; }
   .form {
     width: 100% !important; }
