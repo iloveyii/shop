@@ -409,6 +409,18 @@ p.large {
     color: #FFFFFF;
     list-style: none;
     padding: 40px; }
+    .dashboard .list-group-item {
+      background-color: #7a7a7a;
+      display: flex;
+      flex-direction: row; }
+      .dashboard .list-group-item-data {
+        flex: 3;
+        display: flex;
+        flex-direction: row; }
+      .dashboard .list-group-item-buttons {
+        flex: 1;
+        flex-direction: row;
+        display: flex; }
     .dashboard .list-group li {
       line-height: 3.0;
       padding: 0 10px;
@@ -421,7 +433,13 @@ p.large {
 
 @media only screen and (max-width: 600px) {
   .dashboard--left-bar label {
-    display: none; } }
+    display: none; }
+  .list-group-item {
+    flex-direction: column !important; }
+  .button-small {
+    min-width: 100px !important;
+    padding: 2px !important;
+    margin-right: 3px; } }
 
 .dd-wrapper {
   display: block;

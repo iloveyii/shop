@@ -10,10 +10,12 @@ const Li = ({item, itemDeleteAction, itemEditAction}) => {
     };
     return (
         <li className="list-group-item">
-            <div style={{display: 'flex'}}>
+            <div class="list-group-item-data">
                 <div style={{flex: 4}} href="#">{item.name}</div>
                 <div style={{flex: 8}}>{item.quantity}</div>
                 <div style={{flex: 8}}>{item.category}</div>
+            </div>
+            <div className="list-group-item-buttons">
                 <div style={{flex: 1}}>
                     <button onClick={() => itemEditAction(item)} className="button-small">Edit</button>
                 </div>
