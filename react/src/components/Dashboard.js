@@ -4,12 +4,18 @@ import {withRouter} from "react-router-dom";
 
 import {apiServer} from '../common/constants';
 import Sidebar from './Sidebar';
-import { Chart } from 'react-charts';
-
-
-
+// import { Chart } from 'react-charts';
+import Chart from "react-google-charts";
 const endPoint = '/v2/calculator/api/?zone=';
 const server = apiServer + endPoint;
+
+const data2 = [
+    ["Element", "Density", { role: "style" }],
+    ["Copper", 8.94, "#b87333"], // RGB value
+    ["Silver", 10.49, "silver"], // English color name
+    ["Gold", 19.3, "gold"],
+    ["Platinum", 21.45, "color: #e5e4e2"] // CSS-style declaration
+];
 
 
 class Dashboard extends React.Component {
@@ -68,8 +74,14 @@ class Dashboard extends React.Component {
                                 height: '300px'
                             }}
                         >
-                            <Chart data={data} axes={axes} />
+                            /* <Chart data={data} axes={axes} /> */
 
+                            <Chart
+                                chartType="ColumnChart"
+                                width="100%"
+                                height="400px"
+                                data={data2}
+                            />
 
                         </div>
                     </div>
