@@ -1,4 +1,4 @@
-const apiServer = 'http://shop-api.softhem.se';
+const apiServer = 'http://shopping-api.loc';
 
 
 export  {
