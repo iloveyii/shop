@@ -3,23 +3,59 @@ import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 
 import {apiServer} from '../common/constants';
-import Sidebar from './Sidebar';
-import Center from './Center';
-
+import axios from 'axios';
 
 const endPoint = '/v2/calculator/api/?zone=';
 const server = apiServer + endPoint;
 
 
 class Login extends React.Component {
+
     constructor(props) {
         super(props);
+
         this.state = {
-            name: ''
+            username : '',
+            password: '',
+            login: false
         }
     }
 
+    handleChange(e) {
+        e.preventDefault();
+        const field = e.target.id;
+        const value = e.target.value;
+        this.setState({[field]: value});
+    }
+
+    handleLogin(e) {
+        e.preventDefault();
+        const url = 'http://localhost:8090/api/v1/login';
+        axios.get(url, {
+            auth:{
+                username: this.state.username,
+                password: this.state.password
+            },
+            headers : {
+                username: this.state.username,
+                password: this.state.password
+            }
+
+        }).then(res => {
+            if(res.data && res.data.authenticated) {
+                this.setState({login: true});
+            }
+            console.log('res', res.data);
+            return res.data;
+        }).catch(error => {
+            throw new Error(error);
+            console.dir(error);
+        });
+    }
+
     render() {
+
+        this.state.login && this.props.history.push('/dashboard');
 
         return (
             <section id="dashboard" className="dashboard">
@@ -31,15 +67,15 @@ class Login extends React.Component {
                             <h1>Login</h1>
                             <div className="row">
                                 <div className="col-1-of-1">
-                                    <input type="text" placeholder="Type username" value={this.state.name}
-                                           onChange={e => this.handleName(e)}/>
+                                    <input type="text" id="username" placeholder="Type username" value={this.state.username}
+                                           onChange={e => this.handleChange(e)}/>
                                 </div>
                             </div>
 
                             <div className="row">
                                 <div className="col-1-of-1">
-                                    <input type="text" placeholder="Type password" value={this.state.name}
-                                           onChange={e => this.handleName(e)}/>
+                                    <input type="password" id="password" placeholder="Type password" value={this.state.password}
+                                           onChange={e => this.handleChange(e)}/>
                                 </div>
                             </div>
 
@@ -47,7 +83,7 @@ class Login extends React.Component {
                                 <div className="col-1-of-1">
 
                                     <button style={{width: '80px'}} type="submit"
-                                            onClick={e => this.handleFormSubmit(e)}><i
+                                            onClick={e => this.handleLogin(e)}><i
                                         className="fas fa-sign-in-alt"></i> Login
                                     </button>
 

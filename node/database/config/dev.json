@@ -1,0 +1,11 @@
+{
+  "dev": {
+    "host": "localhost",
+    "database": "shopping",
+    "driver": "mysql",
+    "user": "root",
+    "password": "root",
+    "multipleStatements": true,
+    "sql-file": true
+  }
+}

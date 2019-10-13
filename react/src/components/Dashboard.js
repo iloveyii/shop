@@ -4,7 +4,8 @@ import {withRouter} from "react-router-dom";
 
 import {apiServer} from '../common/constants';
 import Sidebar from './Sidebar';
-import Center from './Center';
+import { Chart } from 'react-charts';
+
 
 
 const endPoint = '/v2/calculator/api/?zone=';
@@ -18,12 +19,63 @@ class Dashboard extends React.Component {
 
     render() {
 
+        const data = [
+                {
+                    label: 'Series 1',
+                    data: [[0, 1], [1, 2], [2, 4], [3, 2], [4, 7]]
+                },
+                {
+                    label: 'Series 2',
+                    data: [[0, 3], [1, 1], [2, 5], [3, 6], [4, 4]]
+                }
+            ] ;
+
+        const axes = [
+                { primary: true, type: 'linear', position: 'bottom' },
+                { type: 'linear', position: 'left' }
+            ];
+
+        const options = {
+            title: {
+                text: "Basic Column Chart"
+            },
+            data: [
+                {
+                    // Change type to "doughnut", "line", "splineArea", etc.
+                    type: "column",
+                    dataPoints: [
+                        { label: "Apple",  y: 10  },
+                        { label: "Orange", y: 15  },
+                        { label: "Banana", y: 25  },
+                        { label: "Mango",  y: 30  },
+                        { label: "Grape",  y: 28  }
+                    ]
+                }
+            ]
+        };
+
+
+
         return (
             <section id="dashboard" className="dashboard">
                 <Sidebar/>
                 <div className="dashboard--center" onClick={this.handleCenterClick}>
                     <h1>Dashboard</h1>
+                    <div style={{padding: '40px', backgroundColor: 'white', borderRadius: '3px'}}>
+                        <div
+                            style={{
+                                width: '400px',
+                                height: '300px'
+                            }}
+                        >
+                            <Chart data={data} axes={axes} />
+
+
+                        </div>
+                    </div>
+
                 </div>
+
             </section>
         )
     }
