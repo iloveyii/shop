@@ -142,7 +142,10 @@ app.post('/api/v1/users', (req, res, next) => {
     con.query(sql, (err, result) => {
         if (err) throw  err;
         console.log('Result:', result);
-        res.json(result);
+        const response = {
+            status : result.affectedRows
+        }
+        res.json(response);
     });
 
     console.log('Headers: ', req.headers);

@@ -26,23 +26,30 @@ class Signup extends React.Component {
         this.setState({[field]: value});
     }
 
-    handleSignUp(e) {
+    async handleSignUp(e) {
         e.preventDefault();
         const url = apiServer + '/api/v1/users';
         const {username, email, password} = this.state;
         const item = {username, email, password};
 
-        axios.post(url, {item})
-            .then(res => {
-                if (res.data && res.data.authenticated) {
-                    this.setState({login: true});
-                }
-                console.log('res', res.data);
-                return res.data;
-            }).catch(error => {
-            throw new Error(error);
-            console.dir(error);
-        });
+        try {
+            await axios.post(url, {item})
+                .then(res => {
+                    if (res.data && res.data.authenticated) {
+                        this.setState({login: true});
+                    }
+                    console.log('res', res.data);
+                    if(res.data.status === 1) {
+                        this.props.history.push('/dashboard');
+                    }
+                    return res.data;
+                }).catch(error => {
+                throw new Error(error);
+                console.dir(error);
+            });
+        } catch (e) {
+            alert('Some error occurred, please refresh page. ' + e.message);
+        }
     }
 
     render() {
