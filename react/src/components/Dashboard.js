@@ -31,7 +31,7 @@ class Dashboard extends React.Component {
             <section id="dashboard" className="dashboard">
                 <Sidebar/>
                 <div className="dashboard--center" onClick={this.handleCenterClick}>
-                    <p style={{textAlign: 'right'}}><UserInfo /></p>
+                    <div style={{textAlign: 'right'}}><UserInfo /></div>
                     <h1>Dashboard</h1>
                     <div style={{padding: '40px', backgroundColor: 'lavenderblush', borderRadius: '3px'}}>
 

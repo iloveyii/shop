@@ -72,7 +72,7 @@ app.get('/api/v1/login', (req, res) => {
     const userInput = req.headers;
     // const username = userInput.username ? userInput.username : 'root';
     // const password = userInput.password ? md5(userInput.password) : 'root';
-    console.log('UserInput', userInput);
+    console.log('header', req.headers);
 
     const base64Credentials =  req.headers.authorization.split(' ')[1];
     const credentials = Buffer.from(base64Credentials, 'base64').toString('ascii');
@@ -92,7 +92,8 @@ app.get('/api/v1/login', (req, res) => {
         if (err) throw  err;
         console.log(result);
         const auth = {
-            authenticated: false
+            authenticated: false,
+            username: username
         };
         if(result.length > 0) {
             auth.authenticated = true;

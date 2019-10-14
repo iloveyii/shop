@@ -33,12 +33,14 @@ import registerServiceWorker from './registerServiceWorker';
 import rootSaga from './sagas/rootSaga';
 import ItemsReducer from "./reducers/ItemsReducer";
 import ItemReducer from "./reducers/ItemReducer";
+import LoginReducer from "./reducers/LoginReducer";
 
 import {itemsReadAction} from "./actions/ItemsAction";
 
 const allReducers = combineReducers({
     items: ItemsReducer,
-    item: ItemReducer
+    item: ItemReducer,
+    login: LoginReducer
 });
 
 // # 02

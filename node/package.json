@@ -11,12 +11,13 @@
     "md5": "^2.2.1",
     "moment": "^2.24.0",
     "mysql": "^2.17.1",
-    "mysql-migrations": "^1.0.6"
+    "mysql-migrations": "^1.0.6",
+    "nodemon": "^1.19.3"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "migrate": "cd ./database && db-migrate up --config ./config/dev.json"
   },
   "keywords": [

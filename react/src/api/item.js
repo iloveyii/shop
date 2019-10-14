@@ -34,18 +34,19 @@ export default {
                 throw new Error(error);
                 console.dir(error);
             }),
-        read: (user) =>
-            axios.get(server,{
+        read: (user) => console.log('Inside api', user) ||
+            axios.get(apiServer + '/api/v1/login', {
+                auth: {
+                    username: user.username,
+                    password: user.password
+                },
                 headers: {
-                    'Content-Type': 'application/json',
                     username: user.username,
                     password: user.password
                 }
             }).then(res => res.data).catch(error => {
                 throw new Error(error);
                 console.dir(error);
-            }),
-
-
+            })
     }
 }

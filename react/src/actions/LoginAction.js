@@ -17,7 +17,9 @@ export const loginSuccessAction = (resp) => {
     console.log('Inside loginSuccessAction');
     return {
         type: LOGIN_SUCCESS,
-        payload: resp
+        payload: {
+            user : resp
+        }
     }
 };
 
