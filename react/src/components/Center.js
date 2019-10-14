@@ -71,7 +71,7 @@ class Center extends React.Component {
             id: id,
             username: username,
             password: password,
-            admin : admin.username
+            admin : admin
         };
 
         console.log('Form data: ', id, username, password, admin);

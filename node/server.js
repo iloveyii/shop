@@ -130,18 +130,20 @@ app.put('/api/v1/users/:id', (req, res) => {
     });
 });
 
-app.delete('/api/v1/posts/:id', (req, res) => {
-    const postId = db.getPrimaryKey(req.params.id);
-    db.getDb().collection(collection).findOneAndDelete(
-        {_id: postId},
-        (err, action) => {
-            if (err) {
-                console.log('Error in deleting id ' + req.params.id);
-            } else {
-                res.json(action)
-            }
-        }
-    );
+app.delete('/api/v1/users/:id', (req, res) => {
+    const userId = req.params.id;
+    sql = `
+          DELETE from login 
+          WHERE id=${userId}
+        `;
+
+    console.log(sql);
+
+    con.query(sql, (err, result) => {
+        if (err) throw  err;
+        console.log('Result:', result);
+        res.json(result);
+    });
 });
 
 
