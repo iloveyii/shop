@@ -1,10 +1,12 @@
 import {ITEM_ADD, ITEM_DELETE, ITEM_UPDATE} from "../types/Item";
 import {ITEMS_READ} from "../types/Items";
+import {LOGIN} from "../types/Login";
 
 import {takeLatest, takeEvery} from 'redux-saga/effects';
 
 import {itemAddSaga, itemDeleteSaga, itemUpdateSaga} from "./itemSagas";
 import {itemsReadSaga} from "./itemsSagas";
+import {loginSaga} from "./loginSagas";
 
 
 export default function* rootSaga() {
@@ -13,4 +15,5 @@ export default function* rootSaga() {
     yield takeLatest(ITEM_UPDATE, itemUpdateSaga);
 
     yield takeLatest(ITEMS_READ, itemsReadSaga);
+    yield takeLatest(LOGIN, loginSaga);
 }

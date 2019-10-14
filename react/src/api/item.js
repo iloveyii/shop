@@ -34,6 +34,18 @@ export default {
                 throw new Error(error);
                 console.dir(error);
             }),
+        read: (user) =>
+            axios.get(server,{
+                headers: {
+                    'Content-Type': 'application/json',
+                    username: user.username,
+                    password: user.password
+                }
+            }).then(res => res.data).catch(error => {
+                throw new Error(error);
+                console.dir(error);
+            }),
+
 
     }
 }
