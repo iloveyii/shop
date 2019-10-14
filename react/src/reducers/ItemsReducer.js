@@ -7,7 +7,7 @@ const ItemsReducer = (state = initState, action = {}) => {
     switch (action.type) {
         case ITEMS_READ_SUCCESS:
             console.log('Inside ItemsReducer ITEMS_READ_SUCCESS', action.payload);
-            return action.payload.models;
+            return action.payload;
 
         case ITEM_ADD_SUCCESS:
             console.log('Inside ItemsReducer', action.payload);

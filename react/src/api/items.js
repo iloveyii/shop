@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {apiServer} from '../common/constants';
 
-const endPoint = '/api/v1/items';
+const endPoint = '/api/v1/users';
 const server = apiServer + endPoint;
 
 export default {

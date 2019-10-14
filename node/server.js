@@ -76,6 +76,21 @@ app.get('/api/v1/login', (req, res) => {
     console.log(sql);
 });
 
+app.get('/api/v1/users', (req, res) => {
+    sql = `
+          SELECT * 
+          FROM login 
+          ;
+        `;
+
+    con.query(sql, (err, result) => {
+        if (err) throw  err;
+        res.json(result);
+    });
+
+    console.log(sql);
+});
+
 
 app.listen(port, () => console.log('Server started on port ' + port));
 

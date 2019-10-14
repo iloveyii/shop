@@ -1,4 +1,4 @@
-const apiServer = 'http://shopping-api.loc';
+const apiServer = 'http://localhost:8090';
 
 
 export  {

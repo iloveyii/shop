@@ -11,9 +11,9 @@ const Li = ({item, itemDeleteAction, itemEditAction}) => {
     return (
         <li className="list-group-item">
             <div className="list-group-item-data">
-                <div style={{flex: 4}} href="#">{item.name}</div>
-                <div style={{flex: 8}}>{item.quantity}</div>
-                <div style={{flex: 8}}>{item.category}</div>
+                <div style={{flex: 4}} href="#">{item.id}</div>
+                <div style={{flex: 8}}>{item.username}</div>
+                <div style={{flex: 8}}>{item.password}</div>
             </div>
             <div className="list-group-item-buttons">
                 <div style={{flex: 1}}>
@@ -42,6 +42,7 @@ class ListItems extends React.Component {
     render() {
         const {items, itemDeleteAction} = this.props;
         if (! items || items.length === 0) return <div>Loading...</div>;
+        console.log('ITems:', items);
 
         return (
             <ul className="list-group u-margin-top-big">
