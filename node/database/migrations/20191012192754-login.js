@@ -22,6 +22,7 @@ exports.up = function (db, callback) {
           username: {type: 'string', length: 50},
           password: {type: 'string', length: 32},
           token: {type: 'string', length: 32},
+          admin: {type: 'int'}
         },
         ifNotExists: true
       }, function (err) {

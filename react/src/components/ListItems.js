@@ -13,7 +13,7 @@ const Li = ({item, itemDeleteAction, itemEditAction}) => {
             <div className="list-group-item-data">
                 <div style={{flex: 4}} href="#">{item.id}</div>
                 <div style={{flex: 8}}>{item.username}</div>
-                <div style={{flex: 8}}>{item.password}</div>
+                <div style={{flex: 8}}>{item.admin}</div>
             </div>
             <div className="list-group-item-buttons">
                 <div style={{flex: 1}}>

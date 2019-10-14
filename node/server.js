@@ -91,6 +91,42 @@ app.get('/api/v1/users', (req, res) => {
     console.log(sql);
 });
 
+app.post('/api/v1/users', (req, res, next) => {
+    const userInput = req.body.item;
+    const username = userInput.username;
+    const password = md5(userInput.password);
+    const admin = userInput.admin ? 1 : 0;
+    sql = `
+          INSERT INTO login (username, password, admin)
+          VALUES ('${username}', '${password}', ${admin}) 
+          ;
+        `;
+
+    console.log(sql);
+
+    con.query(sql, (err, result) => {
+        if (err) throw  err;
+        console.log('Result:', result);
+        res.json(result);
+    });
+});
+
+app.delete('/api/v1/posts/:id', (req, res) => {
+    const postId = db.getPrimaryKey(req.params.id);
+    db.getDb().collection(collection).findOneAndDelete(
+        {_id: postId},
+        (err, action) => {
+            if (err) {
+                console.log('Error in deleting id ' + req.params.id);
+            } else {
+                res.json(action)
+            }
+        }
+    );
+});
+
+
+
 
 app.listen(port, () => console.log('Server started on port ' + port));
 

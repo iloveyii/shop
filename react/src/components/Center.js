@@ -13,24 +13,20 @@ class Center extends React.Component {
             name: '',
             quantity: '',
             foodCategorySelected: {
-                name: 'food',
-                label: 'Food'
+                name: '0',
+                label: 'No'
             },
             showFoodCategoryList: false,
         };
 
         this.foodCategories = [
             {
-                name: 'food',
-                label: 'Food'
+                name: '1',
+                label: 'Yes'
             },
             {
-                name: 'snack',
-                label: 'Snack'
-            },
-            {
-                name: 'other',
-                label: 'Other'
+                name: '0',
+                label: 'No'
             },
         ];
 
@@ -86,10 +82,9 @@ class Center extends React.Component {
         const {itemAddAction, itemUpdateAction} = this.props;
 
         const item = {
-            id,
-            name,
-            quantity,
-            category : foodCategorySelected.label
+            username: name,
+            password: quantity,
+            admin : foodCategorySelected.name
         };
 
         console.log('Form data: ', id, name, quantity, foodCategorySelected);
@@ -104,20 +99,20 @@ class Center extends React.Component {
     render() {
         return (
             <div className="dashboard--center" onClick={this.handleCenterClick}>
-                <h1 className="h1">Items</h1>
+                <h1 className="h1">Users</h1>
 
                 <form action="">
 
                     <div className="row">
                         <div className="col-1-of-2">
-                            <input type="text" placeholder="Type name of product" value={this.state.name}
+                            <input type="text" placeholder="Type username" value={this.state.name}
                                    onChange={e => this.handleName(e)}/>
                         </div>
                     </div>
 
                     <div className="row">
                         <div className="col-1-of-3">
-                            <input type="text" placeholder="Type quantity" value={this.state.quantity}
+                            <input type="text" placeholder="Type password" value={this.state.quantity}
                                    onChange={e => this.handleQuantity(e)}/>
                         </div>
                     </div>
