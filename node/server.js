@@ -124,6 +124,7 @@ app.get('/api/v1/users', (req, res) => {
 
 app.post('/api/v1/users', (req, res, next) => {
     const userInput = req.body.item;
+    const email = userInput.email;
     const username = userInput.username;
     const password = md5(userInput.password);
     const doerIsAdmin =  1; //isAdmin(req); @TODO
@@ -133,8 +134,8 @@ app.post('/api/v1/users', (req, res, next) => {
     }
 
     sql = `
-          INSERT INTO login (username, password, admin)
-          VALUES ('${username}', '${password}', ${admin});
+          INSERT INTO login (email, username, password, admin)
+          VALUES ('${email}', '${username}', '${password}', ${admin});
         `;
 
     console.log(sql);
@@ -155,15 +156,18 @@ app.post('/api/v1/users', (req, res, next) => {
 app.put('/api/v1/users/:id', (req, res) => {
     console.log('PUT /api/v1/posts', req.body, req.params.id);
     const userId = req.params.id;
-    const {username, password, admin} = req.body;
-
+    const userInput = req.body;
+    const {email, username, password} = userInput;
+    const doerIsAdmin =  1; //isAdmin(req); @TODO
+    let admin =  0;
+    if(userInput.admin && doerIsAdmin) {
+        admin = userInput.admin;
+    }
     sql = `
-          UPDATE login SET username='${username}', password='${password}', admin=${admin}
+          UPDATE login SET email='${email}', username='${username}', password='${password}', admin=${admin}
           WHERE id=${userId}
         `;
-
     console.log(sql);
-
     con.query(sql, (err, result) => {
         if (err) throw  err;
         console.log('Result:', result);

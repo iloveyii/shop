@@ -29,7 +29,7 @@ class Sidebar extends React.Component {
             <div className="dashboard--left-bar">
                 <span className="button line u-green-text">
                     <i className="fas fa-shopping-basket"></i>
-                    <label htmlFor=""><h4 className="italic">Shop</h4></label>
+                    <label htmlFor=""><h4 className="italic">Admin</h4></label>
                 </span>
                 <span className="dashboard--left-bar-line"></span>
 

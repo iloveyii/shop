@@ -4,6 +4,7 @@ import {withRouter} from "react-router-dom";
 
 import {apiServer} from '../common/constants';
 import Sidebar from './Sidebar';
+import UserInfo from './UserInfo';
 // import { Chart } from 'react-charts';
 import Chart from "react-google-charts";
 
@@ -30,6 +31,7 @@ class Dashboard extends React.Component {
             <section id="dashboard" className="dashboard">
                 <Sidebar/>
                 <div className="dashboard--center" onClick={this.handleCenterClick}>
+                    <p style={{textAlign: 'right'}}><UserInfo /></p>
                     <h1>Dashboard</h1>
                     <div style={{padding: '40px', backgroundColor: 'lavenderblush', borderRadius: '3px'}}>
 

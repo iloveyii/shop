@@ -9,6 +9,7 @@ class Center extends React.Component {
         super(props);
         this.state = {
             id: null,
+            email: '',
             username: '',
             password: '',
             admin: 0,
@@ -52,35 +53,36 @@ class Center extends React.Component {
     componentWillReceiveProps(nextProps, nextContext) {
         console.log('componentWillReceiveProps', nextProps);
 
-        if(nextProps.edit && nextProps.edit.item) {
-            const {id, username, password, admin} = nextProps.edit.item;
-            this.setState({id: id ? id : null, username, password, admin});
+        if (nextProps.edit && nextProps.edit.item) {
+            const {id, email, username, password, admin} = nextProps.edit.item;
+            this.setState({id: id ? id : null, email, username, password, admin});
         }
 
-        if(nextProps.add && nextProps.add.status === true) {
-            this.setState({id: null, username: '', password: '', admin: 0 });
+        if (nextProps.add && nextProps.add.status === true) {
+            this.setState({id: null, username: '', password: '', admin: 0});
         }
     }
 
     handleFormSubmit(e) {
         e.preventDefault();
-        const {id, username, password, admin} = this.state;
+        const {id, email, username, password, admin} = this.state;
         const {itemAddAction, itemUpdateAction} = this.props;
 
         const item = {
             id: id,
+            email: email,
             username: username,
             password: password,
-            admin : admin
+            admin: admin
         };
 
         console.log('Form data: ', id, username, password, admin);
 
-        if(id === null) {
+        if (id === null) {
             itemAddAction(item);
         } else {
             itemUpdateAction(item);
-            this.setState({id: null, username: '', password: '', admin: 0});
+            this.setState({id: null, email: '', username: '', password: '', admin: 0});
         }
     }
 
@@ -90,6 +92,13 @@ class Center extends React.Component {
                 <h1 className="h1">Users</h1>
 
                 <form action="">
+
+                    <div className="row">
+                        <div className="col-1-of-2">
+                            <input type="text" id="email" placeholder="Type email" value={this.state.email}
+                                   onChange={e => this.handleChange(e)}/>
+                        </div>
+                    </div>
 
                     <div className="row">
                         <div className="col-1-of-2">
@@ -141,7 +150,7 @@ class Center extends React.Component {
 
                 </form>
 
-                <ListItems />
+                <ListItems/>
 
             </div>
 

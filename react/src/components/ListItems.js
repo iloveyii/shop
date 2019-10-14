@@ -11,9 +11,10 @@ const Li = ({item, itemDeleteAction, itemEditAction}) => {
     return (
         <li className="list-group-item">
             <div className="list-group-item-data">
-                <div style={{flex: 4}} href="#">{item.id}</div>
-                <div style={{flex: 8}}>{item.username}</div>
-                <div style={{flex: 8}}>{item.admin}</div>
+                <div style={{flex: 1}} href="#">{item.id}</div>
+                <div style={{flex: 4}}>{item.username}</div>
+                <div style={{flex: 8}}>{item.email}</div>
+                <div style={{flex: 1}}>{item.admin}</div>
             </div>
             <div className="list-group-item-buttons">
                 <div style={{flex: 1}}>
