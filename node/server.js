@@ -98,8 +98,7 @@ app.post('/api/v1/users', (req, res, next) => {
     const admin = userInput.admin ? 1 : 0;
     sql = `
           INSERT INTO login (username, password, admin)
-          VALUES ('${username}', '${password}', ${admin}) 
-          ;
+          VALUES ('${username}', '${password}', ${admin});
         `;
 
     console.log(sql);

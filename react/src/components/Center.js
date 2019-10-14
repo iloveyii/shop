@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import {withRouter} from "react-router-dom";
 import {connect} from "react-redux";
 import {itemAddAction, itemUpdateAction} from "../actions/ItemAction";
@@ -10,16 +9,16 @@ class Center extends React.Component {
         super(props);
         this.state = {
             id: null,
-            name: '',
-            quantity: '',
-            foodCategorySelected: {
+            username: '',
+            password: '',
+            admin: {
                 name: '0',
                 label: 'No'
             },
-            showFoodCategoryList: false,
+            adminList: false,
         };
 
-        this.foodCategories = [
+        this.adminList = [
             {
                 name: '1',
                 label: 'Yes'
@@ -30,69 +29,69 @@ class Center extends React.Component {
             },
         ];
 
-        this.handleShowFoodCategoryList = this.handleShowFoodCategoryList.bind(this);
+        this.showAdminList = this.showAdminList.bind(this);
         this.handleCenterClick = this.handleCenterClick.bind(this);
         this.selectFoodCategory = this.selectFoodCategory.bind(this);
         this.handleName = this.handleName.bind(this);
         this.handleQuantity = this.handleQuantity.bind(this);
     }
 
-    handleShowFoodCategoryList(e) {
+    showAdminList(e) {
         e.stopPropagation();
-        this.setState({showFoodCategoryList: !this.state.showFoodCategoryList});
+        this.setState({adminList: !this.state.adminList});
     }
 
     handleCenterClick() {
-        this.setState({showFoodCategoryList: false});
+        this.setState({adminList: false});
     }
 
     selectFoodCategory(item) {
-        this.setState({foodCategorySelected: item});
+        this.setState({admin: item});
     }
 
     handleName(e) {
-        this.setState({name: e.target.value});
+        this.setState({username: e.target.value});
     }
 
     handleQuantity(e) {
-        this.setState({quantity: e.target.value});
+        this.setState({password: e.target.value});
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
         console.log('componentWillReceiveProps', nextProps);
 
         if(nextProps.edit && nextProps.edit.item) {
-            const {id, name, quantity, category} = nextProps.edit.item;
-            const foodCategorySelected = {
-                name: category ? category.toLowerCase() : '',
+            const {id, username, password, category} = nextProps.edit.item;
+            const admin = {
+                username: category ? category.toLowerCase() : '',
                 label: category
             };
-            console.log('foodCategorySelected', foodCategorySelected);
-            this.setState({id: id ? id : null, name: name, quantity: quantity, category, foodCategorySelected});
+            console.log('admin', admin);
+            this.setState({id: id ? id : null, username: username, password: password, category, admin});
         }
 
         if(nextProps.add && nextProps.add.status === true) {
-            this.setState({id: null, name: '', quantity: '', category: ''});
+            this.setState({id: null, username: '', password: '', category: ''});
         }
     }
 
     handleFormSubmit(e) {
         e.preventDefault();
-        const {id, name, quantity, foodCategorySelected} = this.state;
+        const {id, username, password, admin} = this.state;
         const {itemAddAction, itemUpdateAction} = this.props;
 
         const item = {
-            username: name,
-            password: quantity,
-            admin : foodCategorySelected.name
+            userusername: username,
+            password: password,
+            admin : admin.username
         };
 
-        console.log('Form data: ', id, name, quantity, foodCategorySelected);
+        console.log('Form data: ', id, username, password, admin);
         if(id === null) {
             itemAddAction(item);
         } else {
             itemUpdateAction(item);
-            this.setState({id: null, name: '', quantity: '', category: ''});
+            this.setState({id: null, username: '', password: '', category: ''});
         }
     }
 
@@ -105,14 +104,14 @@ class Center extends React.Component {
 
                     <div className="row">
                         <div className="col-1-of-2">
-                            <input type="text" placeholder="Type username" value={this.state.name}
+                            <input type="text" placeholder="Type username" value={this.state.username}
                                    onChange={e => this.handleName(e)}/>
                         </div>
                     </div>
 
                     <div className="row">
                         <div className="col-1-of-3">
-                            <input type="text" placeholder="Type password" value={this.state.quantity}
+                            <input type="text" placeholder="Type password" value={this.state.password}
                                    onChange={e => this.handleQuantity(e)}/>
                         </div>
                     </div>
@@ -121,17 +120,17 @@ class Center extends React.Component {
                         <div className="col-1-of-2">
                             <div className="dd-wrapper">
                                 <div className="dd-header dd-header-open" id="select-city"
-                                     onClick={(e) => this.handleShowFoodCategoryList(e)}>
+                                     onClick={(e) => this.showAdminList(e)}>
                                     <div className="dd-header-title"
-                                         id="dd-header-title"> {this.state.foodCategorySelected.label} </div>
+                                         id="dd-header-title"> {this.state.admin.label} </div>
                                     <div className="dd-icon"><i className="fas fa-angle-down"></i></div>
                                 </div>
                                 <ul className="dd-list" id="dd-list"
-                                    style={{display: this.state.showFoodCategoryList ? 'block' : 'none'}}>
+                                    style={{display: this.state.adminList ? 'block' : 'none'}}>
                                     {
-                                        this.foodCategories.map(item => <li
-                                            key={item.name}
-                                            onClick={() => this.selectFoodCategory(item)} id={item.name}
+                                        this.adminList.map(item => <li
+                                            key={item.username}
+                                            onClick={() => this.selectFoodCategory(item)} id={item.username}
                                             className="dd-list-item">{item.label}</li>)
                                     }
                                 </ul>
