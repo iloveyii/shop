@@ -11,67 +11,54 @@ class Center extends React.Component {
             id: null,
             username: '',
             password: '',
-            admin: {
-                name: '0',
-                label: 'No'
-            },
-            adminList: false,
+            admin: 0,
+            showAdminList: false,
         };
 
         this.adminList = [
             {
-                name: '1',
+                value: '1',
                 label: 'Yes'
             },
             {
-                name: '0',
+                value: '0',
                 label: 'No'
             },
         ];
 
         this.showAdminList = this.showAdminList.bind(this);
         this.handleCenterClick = this.handleCenterClick.bind(this);
-        this.selectFoodCategory = this.selectFoodCategory.bind(this);
-        this.handleName = this.handleName.bind(this);
-        this.handleQuantity = this.handleQuantity.bind(this);
+        this.makeAdmin = this.makeAdmin.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     showAdminList(e) {
         e.stopPropagation();
-        this.setState({adminList: !this.state.adminList});
+        this.setState({showAdminList: !this.state.showAdminList});
     }
 
     handleCenterClick() {
-        this.setState({adminList: false});
+        this.setState({showAdminList: false});
     }
 
-    selectFoodCategory(item) {
+    makeAdmin(item) {
         this.setState({admin: item});
     }
 
-    handleName(e) {
-        this.setState({username: e.target.value});
-    }
-
-    handleQuantity(e) {
-        this.setState({password: e.target.value});
+    handleChange(e) {
+        this.setState({[e.target.id]: e.target.value});
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
         console.log('componentWillReceiveProps', nextProps);
 
         if(nextProps.edit && nextProps.edit.item) {
-            const {id, username, password, category} = nextProps.edit.item;
-            const admin = {
-                username: category ? category.toLowerCase() : '',
-                label: category
-            };
-            console.log('admin', admin);
-            this.setState({id: id ? id : null, username: username, password: password, category, admin});
+            const {id, username, password, admin} = nextProps.edit.item;
+            this.setState({id: id ? id : null, username, password, admin});
         }
 
         if(nextProps.add && nextProps.add.status === true) {
-            this.setState({id: null, username: '', password: '', category: ''});
+            this.setState({id: null, username: '', password: '', admin: 0 });
         }
     }
 
@@ -81,17 +68,19 @@ class Center extends React.Component {
         const {itemAddAction, itemUpdateAction} = this.props;
 
         const item = {
-            userusername: username,
+            id: id,
+            username: username,
             password: password,
             admin : admin.username
         };
 
         console.log('Form data: ', id, username, password, admin);
+
         if(id === null) {
             itemAddAction(item);
         } else {
             itemUpdateAction(item);
-            this.setState({id: null, username: '', password: '', category: ''});
+            this.setState({id: null, username: '', password: '', admin: 0});
         }
     }
 
@@ -104,15 +93,15 @@ class Center extends React.Component {
 
                     <div className="row">
                         <div className="col-1-of-2">
-                            <input type="text" placeholder="Type username" value={this.state.username}
-                                   onChange={e => this.handleName(e)}/>
+                            <input type="text" id="username" placeholder="Type username" value={this.state.username}
+                                   onChange={e => this.handleChange(e)}/>
                         </div>
                     </div>
 
                     <div className="row">
                         <div className="col-1-of-3">
-                            <input type="text" placeholder="Type password" value={this.state.password}
-                                   onChange={e => this.handleQuantity(e)}/>
+                            <input type="text" id="password" placeholder="Type password" value={this.state.password}
+                                   onChange={e => this.handleChange(e)}/>
                         </div>
                     </div>
 
@@ -122,15 +111,15 @@ class Center extends React.Component {
                                 <div className="dd-header dd-header-open" id="select-city"
                                      onClick={(e) => this.showAdminList(e)}>
                                     <div className="dd-header-title"
-                                         id="dd-header-title"> {this.state.admin.label} </div>
+                                         id="dd-header-title"> {this.state.admin == 1 ? 'Yes' : 'No'} </div>
                                     <div className="dd-icon"><i className="fas fa-angle-down"></i></div>
                                 </div>
                                 <ul className="dd-list" id="dd-list"
-                                    style={{display: this.state.adminList ? 'block' : 'none'}}>
+                                    style={{display: this.state.showAdminList ? 'block' : 'none'}}>
                                     {
                                         this.adminList.map(item => <li
                                             key={item.username}
-                                            onClick={() => this.selectFoodCategory(item)} id={item.username}
+                                            onClick={() => this.makeAdmin(item.value)} id={item.value}
                                             className="dd-list-item">{item.label}</li>)
                                     }
                                 </ul>

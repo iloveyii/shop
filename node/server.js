@@ -110,6 +110,26 @@ app.post('/api/v1/users', (req, res, next) => {
     });
 });
 
+
+app.put('/api/v1/users/:id', (req, res) => {
+    console.log('PUT /api/v1/posts', req.body, req.params.id);
+    const userId = req.params.id;
+    const {username, password, admin} = req.body;
+
+    sql = `
+          UPDATE login SET username='${username}', password='${password}', admin=${admin}
+          WHERE id=${userId}
+        `;
+
+    console.log(sql);
+
+    con.query(sql, (err, result) => {
+        if (err) throw  err;
+        console.log('Result:', result);
+        res.json(result);
+    });
+});
+
 app.delete('/api/v1/posts/:id', (req, res) => {
     const postId = db.getPrimaryKey(req.params.id);
     db.getDb().collection(collection).findOneAndDelete(
