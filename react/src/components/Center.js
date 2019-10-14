@@ -117,8 +117,8 @@ class Center extends React.Component {
                                 <ul className="dd-list" id="dd-list"
                                     style={{display: this.state.showAdminList ? 'block' : 'none'}}>
                                     {
-                                        this.adminList.map(item => <li
-                                            key={item.username}
+                                        this.adminList.map((item, i) => <li
+                                            key={i}
                                             onClick={() => this.makeAdmin(item.value)} id={item.value}
                                             className="dd-list-item">{item.label}</li>)
                                     }

@@ -19,6 +19,7 @@ exports.up = function (db, callback) {
   db.createTable('login', {
         columns: {
           id: {type: 'int', primaryKey: true, autoIncrement: true},
+          email: {type: 'string', length: 50},
           username: {type: 'string', length: 50},
           password: {type: 'string', length: 32},
           token: {type: 'string', length: 32},
