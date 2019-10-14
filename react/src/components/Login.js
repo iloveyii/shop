@@ -1,12 +1,8 @@
 import React from 'react';
 import {connect} from "react-redux";
+import {Link} from 'react-router-dom';
 import {withRouter} from "react-router-dom";
-
-import {apiServer} from '../common/constants';
 import axios from 'axios';
-
-const endPoint = '/v2/calculator/api/?zone=';
-const server = apiServer + endPoint;
 
 
 class Login extends React.Component {
@@ -64,6 +60,7 @@ class Login extends React.Component {
                     <div style={{display: 'flex', width: '100%', height: '100%', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
 
                         <form action="" style={{width: '500px', backgroundColor: 'black', padding: '40px', borderRadius: '5px'}}>
+                            <p style={{textAlign: 'right'}}><Link to="/signup"> Sign up </Link></p>
                             <h1>Login</h1>
                             <div className="row">
                                 <div className="col-1-of-1">

@@ -40,6 +40,34 @@ con.connect(err => {
     });
 });
 
+function isAdmin(req) {
+    const base64Credentials =  req.headers.authorization.split(' ')[1];
+    const credentials = Buffer.from(base64Credentials, 'base64').toString('ascii');
+    let [username, password] = credentials.split(':');
+    console.log('credentials', credentials);
+    password = md5(password);
+
+    sql = `
+          SELECT * 
+          FROM login 
+          WHERE username='${username}' 
+          AND password='${password}'
+          AND admin=1
+          ;
+        `;
+
+    async function doQuery() {
+        await
+            con.query(sql, (err, result) => {
+                if (err) throw  err;
+                console.log(result);
+                return result.length > 0;
+            });
+    }
+
+    return doQuery();
+}
+
 app.get('/api/v1/login', (req, res) => {
     const userInput = req.headers;
     // const username = userInput.username ? userInput.username : 'root';
@@ -74,6 +102,7 @@ app.get('/api/v1/login', (req, res) => {
     });
 
     console.log(sql);
+    console.log('Headers: ', req.headers);
 });
 
 app.get('/api/v1/users', (req, res) => {
@@ -89,13 +118,20 @@ app.get('/api/v1/users', (req, res) => {
     });
 
     console.log(sql);
+    console.log('Headers: ', req.headers);
+
 });
 
 app.post('/api/v1/users', (req, res, next) => {
     const userInput = req.body.item;
     const username = userInput.username;
     const password = md5(userInput.password);
-    const admin = userInput.admin ? 1 : 0;
+    const doerIsAdmin =  1; //isAdmin(req); @TODO
+    let admin =  0;
+    if(userInput.admin && doerIsAdmin) {
+        admin = userInput.admin;
+    }
+
     sql = `
           INSERT INTO login (username, password, admin)
           VALUES ('${username}', '${password}', ${admin});
@@ -108,6 +144,8 @@ app.post('/api/v1/users', (req, res, next) => {
         console.log('Result:', result);
         res.json(result);
     });
+
+    console.log('Headers: ', req.headers);
 });
 
 
