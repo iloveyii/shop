@@ -9,9 +9,7 @@ const ItemsReducer = (state = initState, action = {}) => {
             console.log('Inside ItemsReducer ITEMS_READ_SUCCESS', action.payload);
             return action.payload;
 
-        case ITEM_ADD_SUCCESS:
-            console.log('Inside ItemsReducer', action.payload);
-            return action.payload.models;
+
 
         case ITEM_DELETE_SUCCESS:
             const index = state.findIndex( item => item.id === action.payload.id);

@@ -29,6 +29,10 @@ const ItemReducer = (state = initState, action = {}) => {
             console.log('Inside ItemsReducer ITEM_EDIT_SUCCESS', action);
             return state;
 
+        case ITEM_ADD_SUCCESS:
+            console.log('Inside ItemsReducer', action.payload);
+            return { add: Object.assign({}, action.payload) };
+
         default:
             return initState;
     }

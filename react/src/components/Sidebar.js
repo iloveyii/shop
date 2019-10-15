@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import {connect} from "react-redux";
+import {logoutAction} from "../actions/LoginAction";
 
 class Sidebar extends React.Component {
     constructor(props) {
@@ -17,9 +18,17 @@ class Sidebar extends React.Component {
         this.setState({active: e});
     }
 
-    componentWillReceiveProps(nextProps, nextContext) {
+    handleLogout() {
+        const {logoutAction} = this.props;
+        logoutAction();
     }
 
+    componentWillReceiveProps(nextProps, nextContext) {
+        const { login } = nextProps;
+        if(login.authenticated === false) {
+            this.props.history.push('/');
+        }
+    }
 
     render() {
         let {pathname} = this.props.location;
@@ -58,7 +67,7 @@ class Sidebar extends React.Component {
                     <label>Reports</label>
                 </Link>
 
-                <span className="button">
+                <span className="button" onClick={() => this.handleLogout()}>
                     <i className="fas fa-sign-out-alt"></i>
                     <label>Sign out</label>
                 </span>
@@ -74,13 +83,16 @@ class Sidebar extends React.Component {
  * @param state
  */
 const mapStateToProps = state => ({
+    login : state.login
 });
 
 /**
  * Import action from dir action above - but must be passed to connect method in order to trigger reducer in store
  * @type {{UserUpdate: UserUpdateAction}}
  */
-const mapActionsToProps = {};
+const mapActionsToProps = {
+    logoutAction
+};
 
 export default withRouter(connect(mapStateToProps, mapActionsToProps)(Sidebar));
 

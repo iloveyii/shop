@@ -58,8 +58,8 @@ class Center extends React.Component {
             this.setState({id: id ? id : null, email, username, password, admin});
         }
 
-        if (nextProps.add && nextProps.add.status === true) {
-            this.setState({id: null, username: '', password: '', admin: 0});
+        if (nextProps.add && nextProps.add.status === 1) {
+            this.setState({id: null, email: '', username: '', password: '', admin: 0});
         }
     }
 

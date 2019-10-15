@@ -1,5 +1,6 @@
 import {
-    LOGIN, LOGIN_SUCCESS, LOGIN_FAIL
+    LOGIN, LOGIN_SUCCESS, LOGIN_FAIL,
+    LOGOUT
 } from '../types/Login';
 
 export const loginAction = (user) => {
@@ -29,5 +30,17 @@ export const loginFailAction = (err) => {
     return {
         type: LOGIN_FAIL,
         payload: {err}
+    }
+};
+
+
+export const logoutAction = (user) => {
+    console.log('Inside logoutAction', user);
+
+    return {
+        type: LOGOUT,
+        payload: {
+            user
+        }
     }
 };
