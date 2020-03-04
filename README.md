@@ -5,7 +5,7 @@ This is a small Test web application developed in React, Redux, SASS, PHP.
 
 ### Requirements
 This is an assignment where you will develop a simple application from scratch.
-Please share your solution to the email johan.frick@coolstuff.com. Note that zip files are usually blocked by mail servers, so we recommend you to share the solution in some other way of your choice.
+Note that zip files are usually blocked by mail servers, so we recommend you to share the solution in some other way of your choice.
 If you find a requirement unclear, you are allowed to take your own decision on how to proceed, as long as you motivate your choice when handing in the solution.
 Good Luck!
 
