@@ -18,7 +18,7 @@
     "hapi": "^18.1.0",
     "hooks": "^0.3.2",
     "live-server": "^1.2.1",
-    "node-fetch": "^2.3.0",
+    "node-fetch": "^2.6.7",
     "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",
     "qrcode.react": "^0.9.3",
