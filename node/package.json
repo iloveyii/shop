@@ -9,7 +9,7 @@
     "db-migrate-mysql": "^1.1.10",
     "express": "^4.17.1",
     "md5": "^2.2.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "mysql": "^2.17.1",
     "mysql-migrations": "^1.0.6"
   },
